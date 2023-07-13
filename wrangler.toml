@@ -4,9 +4,9 @@ compatibility_date = "2022-03-26"
 main = "src/index.ts"
 
 [vars]
-GITHUB_ACCOUNT = 'killeencode'
-GITHUB_REPO = 'brancato'
-GITHUB_TOKEN = '' # Optional - used with private repos
+GITHUB_ACCOUNT = 'anishmenon'
+GITHUB_REPO = 'https://github.com/MeetMo/grout-desktop-app.git'
+GITHUB_TOKEN = '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' # Optional - used with private repos
 
 [build]
 command = "npm install && npm run build"
