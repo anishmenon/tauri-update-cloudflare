@@ -4,8 +4,8 @@ compatibility_date = "2022-07-26"
 main = "src/index.ts"
 
 [vars]
-GITHUB_ACCOUNT = 'anishmenon'
-GITHUB_REPO = 'https://github.com/MeetMo/grout-desktop-app.git'
+GITHUB_ACCOUNT = 'meetmo'
+GITHUB_REPO = 'grout-desktop-app'
 GITHUB_TOKEN = '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' # Optional - used with private repos
 
 [build]
