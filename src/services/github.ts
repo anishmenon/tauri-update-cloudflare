@@ -4,7 +4,8 @@ export const getReleases = async (request: Request): Promise<Response> => {
     `https://api.github.com/repos/${GITHUB_ACCOUNT}/${GITHUB_REPO}/releases/latest`,
   )
   const headers = new Headers({
-    Accept: 'application/vnd.github.preview',
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version' : '2022-11-28',
     'User-Agent': request.headers.get('User-Agent') as string,
   })
 
