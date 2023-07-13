@@ -20,7 +20,7 @@
     ]
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.0.0",
+    "@cloudflare/workers-types": "^4.20230710.0",
     "@types/jest": "^26.0.23",
     "@types/semver": "^7.3.9",
     "@types/service-worker-mock": "^2.0.1",
