@@ -6,7 +6,7 @@ main = "src/index.ts"
 [vars]
 GITHUB_ACCOUNT = 'MeetMo'
 GITHUB_REPO = 'grout-desktop-app'
-GITHUB_TOKEN = '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' # Optional - used with private repos
+GITHUB_TOKEN = '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' # Optional - used with private repos
 
 [build]
 command = "npm install && npm run build"
