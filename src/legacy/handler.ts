@@ -20,7 +20,8 @@ export const handleLegacyRequest = async (
   }
   if (!platform || !validatePlatform(platform) || !version) {
     return releases
-  }
+  }console.log(release,"legacy");
+  
   const remoteVersion = sanitizeVersion(release.tag_name.toLowerCase())
 
   if (!remoteVersion || !semverValid(remoteVersion)) {

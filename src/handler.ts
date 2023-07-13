@@ -44,7 +44,8 @@ const handleV1Request = async (request: Request) => {
     return responses.NotFound()
   }
   const release = await getLatestRelease(request)
-
+  console.log(release, "v1");
+  
   const remoteVersion = sanitizeVersion(release.tag_name.toLowerCase())
   if (!remoteVersion || !semverValid(remoteVersion)) {
     return responses.NotFound()

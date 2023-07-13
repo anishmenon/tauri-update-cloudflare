@@ -35,10 +35,12 @@ export async function findAssetSignature(
 ): Promise<string | undefined> {
   // check in our assets if we have a file: `fileName.sig`
   // by example fileName can be: App-1.0.0.zip
-
+  console.log(assets,fileName,"38");
   const foundSignature = assets.find(
+   
+    
     (asset) => asset.name.toLowerCase() === `${fileName.toLowerCase()}.sig`,
-  )
+)
 
   if (!foundSignature) {
     return undefined
