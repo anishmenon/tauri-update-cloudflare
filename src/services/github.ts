@@ -4,8 +4,7 @@ export const getReleases = async (request: Request): Promise<Response> => {
     `https://api.github.com/repos/${GITHUB_ACCOUNT}/${GITHUB_REPO}/releases/latest`,
   )
   const headers = new Headers({
-    Accept: 'application/vnd.github+json',
-    'X-GitHub-Api-Version' : '2022-11-28',
+    Accept: 'application/vnd.github.preview',
     'User-Agent': request.headers.get('User-Agent') as string,
   })
 
@@ -36,18 +35,26 @@ export async function findAssetSignature(
 ): Promise<string | undefined> {
   // check in our assets if we have a file: `fileName.sig`
   // by example fileName can be: App-1.0.0.zip
-  console.log(assets,fileName,"38");
+
   const foundSignature = assets.find(
-   
-    
     (asset) => asset.name.toLowerCase() === `${fileName.toLowerCase()}.sig`,
-)
+  )
 
   if (!foundSignature) {
     return undefined
   }
+  const headers = new Headers({
+    Accept: 'application/vnd.github.preview',
+  })
 
-  const response = await fetch(foundSignature.browser_download_url)
+  if (GITHUB_TOKEN?.length) headers.set('Authorization', `token ${GITHUB_TOKEN}`)
+
+  const response = await fetch(foundSignature.browser_download_url, {
+    method: 'GET',
+    headers,
+  })
+  console.log(response,"response");
+  
   if (response.status !== 200) {
     return undefined
   }
